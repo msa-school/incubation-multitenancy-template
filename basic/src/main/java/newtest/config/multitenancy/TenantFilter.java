@@ -27,10 +27,6 @@ import io.jsonwebtoken.security.Keys;
 @Order(1)
 class TenantFilter implements Filter {
 
-    // Autowire JwtDecoder instance
-    @Autowired
-    private JwtDecoder jwtDecoder;
-
 
     @Override
     public void doFilter(
@@ -44,23 +40,8 @@ class TenantFilter implements Filter {
             throw new ServletException("No Token provided");
         }
 
-        // Jwt jwt = jwtDecoder.decode(token);
-        // String tenant = jwt.getClaimAsString("aud");
+        String tenant = JwtTokenParser.extractAudienceFromToken(token.replace("Bearer ", ""));
     
-        SecretKey key = Keys.hmacShaKeyFor("HKFKYP7kb8OMldAgfvnk27FhRPOv8Y7H".getBytes());
- 
-        String tenant = Jwts
-        .parserBuilder()
-        .setSigningKey(key)
-        .requireIssuer("http://localhost:8080")
-        .build()
-        .parseClaimsJws(token.replace("Bearer ", ""))
-        .getBody()
-        .getAudience();
-
-
-        // String tenant = "account";
-
         TenantContext.setCurrentTenant(tenant);
 
         try {

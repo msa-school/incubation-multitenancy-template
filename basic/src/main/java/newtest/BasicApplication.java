@@ -1,7 +1,6 @@
 package newtest;
 
 import newtest.config.kafka.KafkaProcessor;
-import newtest.config.multitenancy.TokenParser;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -17,13 +16,7 @@ public class BasicApplication {
     public static ApplicationContext applicationContext;
 
     public static void main(String[] args) {
-
-
-        TokenParser tokenParser = new TokenParser();
-        String tenant = tokenParser.getTenantId("eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJmZjBoS1Uzb21HUnpfWjB5cDd0eUpWT3N2M2kyYmQ2ZlV3T2R2TWFSQW44In0.eyJleHAiOjE2OTA4NTM4MDYsImlhdCI6MTY5MDg1MDIwNiwianRpIjoiMjRlZWI1NDgtZDg4OC00OThjLWJiMjAtNGJjZTFmNmE0ZTllIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9teV9yZWFsbSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI3ZTAxY2I2OC1jNDMzLTQ1ZmUtYTMzYy04MzAwMzY3YjEzNDQiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJteV9jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiMjQxNDE4ZjgtMmZlNi00OTEwLWJmNTItNTM1ODQwMmRiOWRkIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyJodHRwOi8vbG9jYWxob3N0OjgwODAiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtbXlfcmVhbG0iLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsibXlfY2xpZW50Ijp7InJvbGVzIjpbIlJPTEVfVVNFUiJdfSwiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwic2lkIjoiMjQxNDE4ZjgtMmZlNi00OTEwLWJmNTItNTM1ODQwMmRiOWRkIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJ1c2VyQHVlbmdpbmUub3JnIn0.fFxg1Z0U0ynxFDMRVLxsmO8oPoOTqoypBFtzFOpJn_aFo-O3UOFpg5PbJczCLZDkiCo8DHpp1aEu0Q8pgHqeSgM-IZR8P9NIekZMrV45bhLTzGRTs2NAcObTn8g4aVs-q5JON6dFP3DLxJtsRgnBbj9B9RLsK_AX9e_q2zkbmwu2ZsvbboheXR96fSPL0GEVBn2EB5jczscPkiDMZQjw6Mwbxg1FQnxeJc3P0KER0lJlNWXCmp8LaX9jvlxVJZ5hIvR3V2APeU0rm3rBZsxcArVlVGMREiLMdjVIPK5mB1OVruW1UrzoRBFmQynF-Tpczt7EvY0_6eaWgoBJQOtlEg");
-
-        System.out.println(tenant);
-        // applicationContext =
-        //     SpringApplication.run(BasicApplication.class, args);
+        applicationContext =
+            SpringApplication.run(BasicApplication.class, args);
     }
 }
