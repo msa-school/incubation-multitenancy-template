@@ -97,6 +97,19 @@ sudo mv /tmp/eksctl /usr/local/bin
 ```
 
 
+
+Postgres 
+```
+docker exec -it infra-db-1 /bin/sh
+psql --username=postgres
+CREATE DATABASE tenant1;
+CREATE DATABASE tenant2;
+\l
+
+pg_dump -h localhost -U postgres -d tenant1 -s > ddl.sql
+
+```
+
 Sales DDLs
 ```
 --
